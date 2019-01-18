@@ -76,6 +76,7 @@
   "author": "Enuma Technologies",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "ajv": "6.6.2",
     "bignumber.js": "^8.0.1",
     "bn.js": "^4.11.8",
     "cross-fetch": "^3.0.0",
