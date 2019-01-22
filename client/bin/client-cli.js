@@ -6,7 +6,7 @@ const BigNumber = require('bignumber.js')
 const Colors = require('colors/safe')
 const Ethers = require('ethers')
 const Providers = require('ethers/providers')
-const Client = require(Path.join(__dirname, '..', 'client'))
+const Client = require('..')
 const ShellParse = require('shell-quote').parse
 
 async function run() {
@@ -339,7 +339,7 @@ async function fetchWalletBalance(ctx, symbol) {
   const tokenAddress = ctx.config.assets[symbol]
   const provider = ctx.client.identity.provider
 
-  const erc20Path = Path.join(Client.ContractsPath, 'erc20.abi')
+  const erc20Path = Path.join(Client.ContractsPath, 'ERC20.abi')
   const erc20Abi = JSON.parse(fs.readFileSync(erc20Path))
 
   const contract = new Ethers.Contract(tokenAddress, erc20Abi, provider)

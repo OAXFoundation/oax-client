@@ -44,6 +44,7 @@ export declare class Client implements IClient {
     private _roundJoined;
     private _round;
     private _quarter;
+    private _roundSize;
     private static mkMediatorAsync;
     constructor(assets: AssetAddress[], identity: Identity, transport: TransportClient | string, options: ClientOptions);
     readonly round: number;
@@ -78,6 +79,7 @@ export declare class Client implements IClient {
     once(eventName: string, callback: EventEmitter.ListenerFn): void;
     readonly roundJoined: Round;
     readonly isConnected: boolean;
+    readonly roundSize: Amount | undefined;
     private validateCountersig;
     private registerEventListeners;
     private pollOperatorForStateChange;

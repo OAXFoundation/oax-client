@@ -5,11 +5,8 @@ dependencies:
   ethereumjs-util: 6.0.0
   ethers: 4.0.21
   eventemitter3: 3.1.0
-  get-stdin: 6.0.0
-  minimist: 1.2.0
   path-to-regexp: 2.4.0
   ramda: 0.26.1
-  shell-quote: 1.6.1
   winston: 3.1.0
 devDependencies:
   jest: 23.6.0
@@ -160,18 +157,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-jCpe8kcv2ep0KwTHenUJO6J1fJM=
-  /array-filter/0.0.1:
-    dev: false
-    resolution:
-      integrity: sha1-fajPLiZijtcygDWB/SH2fKzS7uw=
-  /array-map/0.0.0:
-    dev: false
-    resolution:
-      integrity: sha1-iKK6tz0c97zVwbEYoAP2b2ZfpmI=
-  /array-reduce/0.0.0:
-    dev: false
-    resolution:
-      integrity: sha1-FziZ0//Rx9k4PkR5Ul2+J4yrXys=
   /array-unique/0.2.1:
     dev: true
     engines:
@@ -1312,12 +1297,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3t6rVToeoZfYSGd8YoLFR2DJkiQrIiUrGcjvFX2mDw3bn6k2OtwHN0TNCLbBO+w8qTvimhDkv+LSscbJY1vE6w==
-  /get-stdin/6.0.0:
-    dev: false
-    engines:
-      node: '>=4'
-    resolution:
-      integrity: sha512-jp4tHawyV7+fkkSKyvjuLZswblUtz+SQKzSWnBbii16BuZksJlU1wuBYXY75r+duh/llF1ur6oNwi+2ZzjKZ7g==
   /get-stream/3.0.0:
     dev: true
     engines:
@@ -2293,10 +2272,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-Hq3nrMASA0rYTiOWdn6tn6VJWCE=
-  /jsonify/0.0.0:
-    dev: false
-    resolution:
-      integrity: sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
   /jsprim/1.4.1:
     dependencies:
       assert-plus: 1.0.0
@@ -2573,6 +2548,7 @@ packages:
     resolution:
       integrity: sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=
   /minimist/1.2.0:
+    dev: true
     resolution:
       integrity: sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
   /mixin-deep/1.3.1:
@@ -3321,15 +3297,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=
-  /shell-quote/1.6.1:
-    dependencies:
-      array-filter: 0.0.1
-      array-map: 0.0.0
-      array-reduce: 0.0.0
-      jsonify: 0.0.0
-    dev: false
-    resolution:
-      integrity: sha1-9HgZSczkAmlxJ0MOo7PFR29IF2c=
   /shellwords/0.1.1:
     dev: true
     resolution:
@@ -3987,11 +3954,8 @@ specifiers:
   ethereumjs-util: ^6.0.0
   ethers: ^4.0.20
   eventemitter3: ^3.1.0
-  get-stdin: ^6.0.0
   jest: ^23.6.0
   jest-environment-jsdom: ^23.4.0
-  minimist: ^1.2.0
   path-to-regexp: ^2.4.0
   ramda: ^0.26.1
-  shell-quote: ^1.6.1
   winston: ^3.1.0

@@ -1,7 +1,7 @@
 const Path = require('path')
 
-exports.Client = require('./Client').Client
-exports.BaseExchangeClient = require('./exchange/BaseExchangeClient').BaseExchangeClient
-exports.PrivateKeyIdentity = require('./identity/PrivateKeyIdentity').PrivateKeyIdentity
-exports.AssetRegistry = require('./AssetRegistry').AssetRegistry
+exports.Client = require('./src/Client').Client
+exports.BaseExchangeClient = require('./src/exchange/BaseExchangeClient').BaseExchangeClient
+exports.PrivateKeyIdentity = require('./src/identity/PrivateKeyIdentity').PrivateKeyIdentity
+exports.AssetRegistry = require('./src/AssetRegistry').AssetRegistry
 exports.ContractsPath = Path.join(__dirname, 'build/contracts')

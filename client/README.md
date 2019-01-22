@@ -21,7 +21,7 @@ npm i oax-client
 ## Usage
 To use the cli
 ```bash
-npx oax init
+npx oax --init
 ```
 This will generate a `config.json` in the current directory.
 
@@ -49,7 +49,7 @@ To see your deposit
 npx oax fetchBalances
 ```
 
-See `client-cli.js` for examples of programmatic use.
+See `bin/client-cli.js` for examples of programmatic use.
 
 ## Not yet implemented
 

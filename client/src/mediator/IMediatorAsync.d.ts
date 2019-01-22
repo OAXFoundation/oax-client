@@ -40,4 +40,5 @@ export interface IMediatorAsync {
     setTotalWithdrawalAmount(round: Round, tokenAddress: Address, amount: Amount): Promise<TransactionReceipt>;
     openingBalances(round: Round, tokenAddress: Address): Promise<Amount>;
     halt(): Promise<TransactionReceipt>;
+    roundSize(): Promise<Amount>;
 }

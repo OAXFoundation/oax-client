@@ -7,7 +7,8 @@ export declare class ClientBookkeeping {
     private _isHalted;
     private transfers;
     private deposits;
-    private withdrawals;
+    private pendingWithdrawals;
+    private confirmedWithdrawals;
     private admissionSigs;
     private admissionCountersigs;
     private proofOfLiabilities;
@@ -25,13 +26,24 @@ export declare class ClientBookkeeping {
      */
     creditDeposit(amount: Amount): void;
     withdraw(amount: Amount): void;
-    addWithdrawal(amount: Amount): void;
+    addPendingWithdrawal(amount: Amount): void;
+    /**
+     * Updates the accounting corresponding to a confirmed withdrawal:
+     *  - The pending withdrawal amount is substracted for this round
+     *  - The confirmed withdrawal amount is incremented for this round
+     * @param amount amount of the confirmed withdrawal
+     * @param round round when the withdrawal request was made (ie round <= this.round-2)
+     */
+    addConfirmedWithdrawal(amount: Amount, round: Round): void;
     getAdmissionDigest(): Digest;
     getAdmission(): Admission;
     addInstantTransfer(transfer: Transfer, round?: Round): void;
     getAdmissionCountersig(admissionDigest: Digest): string | undefined;
     openingBalance(round?: Round): Amount;
     balance(round?: Round): Amount;
+    getSumPendingWithdrawalsUntilRound(r: Round): Amount;
+    getSumConfirmedWithdrawalsUntilRound(r: Round): Amount;
+    getSumDepositsUntilRound(r: Round): Amount;
     setAdmissionCountersig(admission: Digest, sig: Signature): void;
     halt(): void;
     setAdmissionSig(admission: Digest, sig: Signature): void;

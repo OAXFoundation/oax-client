@@ -1,6 +1,6 @@
 {
     "hubUrl": "http://13.209.182.161:8899/",
-    "providerUrl": "https://rinkeby.infura.io/v3/",
+    "providerUrl": "https://rinkeby.infura.io/v3/<infura-project-id>",
     "operatorAddress": "0xed1EaF99cF2a0899b9D5348c5d423b1b101d8377",
     "mediatorAddress": "0x435b578F9dd60029DaEf1d3F75447FE78D744cE1",
     "assets": {

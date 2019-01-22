@@ -36,7 +36,8 @@ export interface BookkeepingStateJson {
     isHalted: boolean;
     transfers: [number, TransferJson[]][];
     deposits: Array<[number, string]>;
-    withdrawals: Array<[number, string]>;
+    pendingWithdrawals: Array<[number, string]>;
+    confirmedWithdrawals: Array<[number, string]>;
     admissionSigs: [string, string][];
     admissionCountersigs: [string, string][];
     proofOfLiabilities: [number, LiabilityJson[]][];
@@ -232,8 +233,8 @@ export interface JsonOrderBook extends Pick<OrderBook, Exclude<keyof OrderBook, 
 }
 export declare type MarketDepth = Pick<OrderBook, 'bids' | 'asks'>;
 export interface Market {
-    base: string;
-    quote: string;
+    base: AssetAddress;
+    quote: AssetAddress;
 }
 export declare type TradingPair = string;
 export interface HttpTransportOptions {

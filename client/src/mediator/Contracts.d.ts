@@ -48,6 +48,7 @@ export declare class MediatorAsync implements IMediatorAsync {
     setTotalWithdrawalAmount(round: Round, tokenAddress: Address, amount: Amount): Promise<TransactionReceipt>;
     openingBalances(round: Round, tokenAddress: Address): Promise<Amount>;
     halt(): Promise<TransactionReceipt>;
+    roundSize(): Promise<BigNumber>;
 }
 export declare class TokenAsync {
     private contractWithSigner;
