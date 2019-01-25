@@ -5,7 +5,7 @@ const Path = require('path')
 describe('Copyright', () => {
   const PackageJson = require('../package.json')
 
-  for (let jsFile of PackageJson.files.filter(fn => fn.endsWith('.js'))) {
+  for (let jsFile of PackageJson.files.filter(fn => fn.endsWith('.js') && fn !== 'index.js')) {
     it(`${jsFile} has type definitions`, () => {
       expect(PackageJson.files).toContain(jsFile.replace(/\.js$/, '.d.ts'))
     })

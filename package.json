@@ -9,16 +9,15 @@
     "contracts/",
     "examples/",
     "src/",
-    "index",
-    "README.md"
+    "index.js"
   ],
   "scripts": {
     "test": "jest",
-    "oax-cli": "node ./bin/client-cli.js"
+    "oax": "node ./bin/client-cli.js"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/OAXFoundation/oax-client.git"
+    "type": "git",
+    "url": "https://github.com/OAXFoundation/oax-client.git"
   },
   "bin": {
     "oax": "./bin/client-cli.js"

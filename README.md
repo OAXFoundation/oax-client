@@ -15,7 +15,7 @@ In this preview version you can trade OAX and WETH tokens.
 ## Installation
 
 ```bash
-npm i oax-client
+npm i @oax/client
 ```
 
 ## Usage
@@ -31,25 +31,30 @@ it runs.
 
 To see the available commands run
 ```bash
-npx oax # TODO add run script
+npx oax
 ```
 To obtain tokens to trade you first need some rinkeby Ether (see
 https://faucet.rinkeby.io/). Then use the CLI to convert these to WETH tokens
 ```
-npx oax buyWETH 1.2
+npx oax buy WETH 1.1
+npx oax buy OAX 1.2
 ```
-where the number at the end is the amount in Ether you will convert to WETH.
+where the number at the end is the amount in Ether you will convert.
 
-Finally deposit your WETH tokens into the exchange by running
+Finally deposit your tokens into the exchange by running
 ```
-npx oax deposit WETH 1.2
+npx oax deposit WETH 1.1
+npx oax deposit OAX 1.2
 ```
 To see your deposit
 ```
 npx oax fetchBalances
 ```
-
-See `bin/client-cli.js` for examples of programmatic use.
+To place an order
+```
+npx oax createOrder BUY OAX/WETH 0.5 1.23
+```
+See `client-cli.js` for examples of programmatic use.
 
 ## Not yet implemented
 

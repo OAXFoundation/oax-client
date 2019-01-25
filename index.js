@@ -1,3 +1,8 @@
+// ----------------------------------------------------------------------------
+// Copyright (c) 2018,2019 OAX Foundation.
+// https://www.oax.org/
+// ----------------------------------------------------------------------------
+
 const Path = require('path')
 
 exports.Client = require('./src/Client').Client
