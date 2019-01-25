@@ -170,7 +170,12 @@ export declare type MarketSide = 'buy' | 'sell';
  */
 export declare type OrderQuantityFields = Extract<keyof Order, 'price' | 'amount' | 'filled' | 'remaining'>;
 export interface FeeInfo {
-    cost: number;
+    cost: Amount;
+    currency: string;
+    rate?: number;
+}
+export interface FeeInfoJson {
+    cost: string;
     currency: string;
     rate?: number;
 }
@@ -204,10 +209,15 @@ export interface TradeExternal {
     order: Id;
     type: 'limit';
     side: 'buy' | 'sell';
-    price: number;
-    amount: number;
+    price: Amount;
+    amount: Amount;
     cost?: number;
     fee?: FeeInfo;
+}
+export interface TradeJson extends Pick<TradeExternal, Exclude<keyof TradeExternal, 'price' | 'amount' | 'fee'>> {
+    price: string;
+    amount: string;
+    fee?: FeeInfoJson;
 }
 export interface ClientState {
     openingBalance: Amount;

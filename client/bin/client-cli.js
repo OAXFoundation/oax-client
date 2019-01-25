@@ -99,12 +99,16 @@ function parseCommand(argv) {
     case 'getWalletAddress':
       cmd.offline = true
       break
-    case 'buyWETH':
-      amount = argv._[1]
+    case 'buy':
+      symbol = argv._[1]
+      if (!symbol) {
+        throw new ApplicaitonError('No symbol specified.')
+      }
+      amount = argv._[2]
       if (!amount) {
         throw new ApplicaitonError('No amount specified.')
       }
-      cmd.args = [amount]
+      cmd.args = [symbol, amount]
       break
     case 'fetchBalances':
     case 'fetchOrders':
@@ -320,19 +324,18 @@ async function getWalletAddress(ctx) {
   console.log(ctx.wallet.address)
 }
 
-async function buyWETH(ctx, amount) {
-  const symbol = 'WETH'
-  const wethAddr = ctx.config.assets[symbol]
+async function buy(ctx, symbol, amount) {
+  const assetAddr = ctx.config.assets[symbol]
 
-  console.log(`Buying ${amount} WETH...`)
+  console.log(`Buying ${amount} ${symbol}...`)
 
   const tx = await ctx.client.identity.sendTransaction({
-    to: wethAddr,
+    to: assetAddr,
     value: Ethers.utils.parseEther(amount)
   })
   await tx.wait()
 
-  console.log(`Bought ${amount} WETH.`)
+  console.log(`Bought ${amount} ${symbol}.`)
 }
 
 async function fetchWalletBalance(ctx, symbol) {
@@ -451,7 +454,7 @@ function printHelp() {
   console.log('')
   console.log('COMMANDS')
   console.log('getWalletAddress')
-  console.log('buyWETH <amount>')
+  console.log('buy <symbol> <amount>')
   console.log('fetchBalances')
   console.log('fetchWalletBalance <symbol>')
   console.log('fetchOrderBook <pair>')

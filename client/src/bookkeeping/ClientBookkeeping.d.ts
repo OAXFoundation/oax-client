@@ -1,5 +1,6 @@
 import BigNumber from 'bignumber.js';
 import { Account, Address, Amount, BookkeepingStateJson, Digest, Round, Quarter, ProofOfLiability, Signature, Transfer, Admission } from '../BasicTypes';
+import { DefaultDict } from '../libs/Collections';
 export declare class ClientBookkeeping {
     private readonly address;
     private _firstRound;
@@ -41,9 +42,7 @@ export declare class ClientBookkeeping {
     getAdmissionCountersig(admissionDigest: Digest): string | undefined;
     openingBalance(round?: Round): Amount;
     balance(round?: Round): Amount;
-    getSumPendingWithdrawalsUntilRound(r: Round): Amount;
-    getSumConfirmedWithdrawalsUntilRound(r: Round): Amount;
-    getSumDepositsUntilRound(r: Round): Amount;
+    getSumUntilRound(r: Round, amountDict: DefaultDict<Round, Amount>): Amount;
     setAdmissionCountersig(admission: Digest, sig: Signature): void;
     halt(): void;
     setAdmissionSig(admission: Digest, sig: Signature): void;
