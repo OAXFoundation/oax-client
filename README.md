@@ -1,5 +1,7 @@
 # OAX Client
 
+*DEPRECATED* to be replaced by the new Rinkeby testnet client.
+
 Client side code to interact with the rinkeby test net deployment of the
 trustless OAX Exchange. At the moment the functionality includes
 
